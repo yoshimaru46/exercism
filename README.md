@@ -9,7 +9,7 @@ exercism download --exercise=<exercise-slug> --track=<track-slug>
 ## Run tests
 
 ```sh
-cargo test
+cargo test -- --include-ignored
 ```
 
 ## Submit a solution
