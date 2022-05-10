@@ -6,6 +6,12 @@
 exercism download --exercise=<exercise-slug> --track=<track-slug>
 ```
 
+## Run tests
+
+```sh
+cargo test
+```
+
 ## Submit a solution
 
 ```sh
