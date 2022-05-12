@@ -1,3 +1,12 @@
-pub fn factors(n: u64) -> Vec<u64> {
-    unimplemented!("This should calculate the prime factors of {}", n)
+pub fn factors(mut n: u64) -> Vec<u64> {
+    let mut factors = Vec::new();
+    let mut candidates = 2..;
+    while n > 1 {
+        let x = candidates.next().unwrap();
+        while n % x == 0 {
+            n /= x;
+            factors.push(x);
+        }
+    }
+    factors
 }
