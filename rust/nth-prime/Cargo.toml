@@ -4,3 +4,4 @@ name = "nth_prime"
 version = "2.1.0"
 
 [dependencies]
+primes = "0.3.0"

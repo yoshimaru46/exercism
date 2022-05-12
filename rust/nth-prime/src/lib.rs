@@ -1,3 +1,12 @@
 pub fn nth(n: u32) -> u32 {
-    unimplemented!("What is the 0-indexed {}th prime number?", n)
+    use primes::{PrimeSet, Sieve};
+    let mut pset = Sieve::new();
+    let (_ix, x) = pset
+        .iter()
+        .enumerate()
+        .skip(n as usize)
+        .take(1)
+        .next()
+        .unwrap();
+    x as u32
 }
