@@ -1,3 +1,16 @@
-export function decodedValue() {
-  throw new Error('Remove this statement and implement this function')
+const colorMapping: { [key: string]: number } = {
+  black: 0,
+  brown: 1,
+  red: 2,
+  orange: 3,
+  yellow: 4,
+  green: 5,
+  blue: 6,
+  violet: 7,
+  grey: 8,
+  white: 9,
+};
+
+export function decodedValue(args: string[]): number {
+  return colorMapping[args[0]] * 10 + colorMapping[args[1]];
 }
