@@ -1,9 +1,9 @@
 export class DnDCharacter {
   public static generateAbilityScore(): number {
-    throw new Error('Remove this statement and implement this function')
+    return Math.floor(Math.random() * 15) + 3;
   }
 
   public static getModifierFor(abilityValue: number): number {
-    throw new Error('Remove this statement and implement this function')
+    throw new Error("Remove this statement and implement this function");
   }
 }
