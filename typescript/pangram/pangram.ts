@@ -1,10 +1,4 @@
-export function isPangram(text: string) {
-  const allLetters = "abcdefghijklmnopqrstuvwxyz";
-  return allLetters
-    .split("")
-    .every(
-      (letter) =>
-        text.includes(letter.toLowerCase()) ||
-        text.includes(letter.toUpperCase())
-    );
+export function isPangram(sentence: string) {
+  sentence = sentence.toLowerCase();
+  return [..."abcdefghijklmnopqrstuvwxyz"].every((c) => sentence.includes(c));
 }
