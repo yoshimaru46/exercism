@@ -1,21 +1,35 @@
+const DAY: number = 24 * 60;
+const HOUR = 60;
+
 export class Clock {
-  constructor(hour: unknown, minute?: unknown) {
-    throw new Error('Remove this statement and implement this function')
+  minutes: number;
+
+  constructor(hour: number, minute: number = 0) {
+    this.minutes = (((hour * HOUR + minute) % DAY) + DAY) % DAY;
   }
 
-  public toString(): unknown {
-    throw new Error('Remove this statement and implement this function')
+  private getHour(): number {
+    return Math.floor(this.minutes / HOUR);
   }
 
-  public plus(minutes: unknown): Clock {
-    throw new Error('Remove this statement and implement this function')
+  private getMinute(): number {
+    return this.minutes % HOUR;
   }
 
-  public minus(minutes: unknown): Clock {
-    throw new Error('Remove this statement and implement this function')
+  public toString(): string {
+    return `${this.getHour().toString().padStart(2, "0")}:${this.getMinute()
+      .toString()
+      .padStart(2, "0")}`;
   }
 
-  public equals(other: unknown): unknown {
-    throw new Error('Remove this statement and implement this function')
+  public plus(minutes: number): Clock {
+    return new Clock(0, this.minutes + minutes);
+  }
+  public minus(minutes: number): Clock {
+    return new Clock(0, this.minutes - minutes);
+  }
+
+  public equals(other: Clock): boolean {
+    return this.minutes === other.minutes;
   }
 }
