@@ -33,3 +33,14 @@ export class Clock {
     return this.minutes === other.minutes;
   }
 }
+
+// sandbox
+let hash = [
+  {
+    a: 1,
+    b: 2,
+  },
+];
+for (const { a, b } of hash) {
+  console.log({ a, b });
+}
